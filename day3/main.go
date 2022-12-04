@@ -84,7 +84,7 @@ func group(input []string) [][]string {
 func badges(group []string) int {
 	badges := 0
 	priorities := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	validate := make(map[string]bool)
+	validate := map[string]bool{}
 	checked := []string{}
 
 	for _, elfOne := range group[0] {

@@ -1,0 +1,4 @@
+~/repos/phil/advent2022/day4 main> time go run main                                                                                                                                                                                                                                                    INT 21:47:11
+Part 1:  477
+Part 2:  830
+go run main  0.16s user 0.07s system 209% cpu 0.110 total
