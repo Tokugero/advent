@@ -58,12 +58,10 @@ func main() {
 	screen := []bool{}
 
 	for index := range cpu.runningTotal {
-		if index < 40 {
-			screen = append(screen, (cpu.register == index+1 || cpu.register == index || cpu.register == index-1))
-		} else {
-			check := 40 * (index / 40)
-			screen = append(screen, (cpu.register == index-check+1 || cpu.register == index-check || cpu.register == index-check-1))
-		}
+
+		check := 40 * (index / 40)
+		screen = append(screen, (cpu.register == index-check+1 || cpu.register == index-check || cpu.register == index-check-1))
+
 		cpu.cycle(index)
 	}
 
@@ -71,7 +69,7 @@ func main() {
 		if pixel {
 			fmt.Print("#")
 		} else {
-			fmt.Print(".")
+			fmt.Print(" ")
 		}
 		if (width+1)%40 == 0 {
 			fmt.Print("\n")
