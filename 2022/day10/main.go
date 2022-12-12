@@ -60,16 +60,9 @@ func main() {
 	for index := range cpu.runningTotal {
 		if index < 40 {
 			screen = append(screen, (cpu.register == index+1 || cpu.register == index || cpu.register == index-1))
-		} else if index < 80 {
-			screen = append(screen, (cpu.register == index-40+1 || cpu.register == index-40 || cpu.register == index-40-1))
-		} else if index < 120 {
-			screen = append(screen, (cpu.register == index-(40*2)+1 || cpu.register == index-(40*2) || cpu.register == index-(40*2)-1))
-		} else if index < 160 {
-			screen = append(screen, (cpu.register == index-(40*3)+1 || cpu.register == index-(40*3) || cpu.register == index-(40*3)-1))
-		} else if index < 200 {
-			screen = append(screen, (cpu.register == index-(40*4)+1 || cpu.register == index-(40*4) || cpu.register == index-(40*4)-1))
-		} else if index < 240 {
-			screen = append(screen, (cpu.register == index-(40*5)+1 || cpu.register == index-(40*5) || cpu.register == index-(40*5)-1))
+		} else {
+			check := 40 * (index / 40)
+			screen = append(screen, (cpu.register == index-check+1 || cpu.register == index-check || cpu.register == index-check-1))
 		}
 		cpu.cycle(index)
 	}
