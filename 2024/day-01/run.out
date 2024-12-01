@@ -1,0 +1,4 @@
+$ time python solution.py                                                            
+2166959
+23741109
+python solution.py  0.02s user 0.00s system 99% cpu 0.019 total
